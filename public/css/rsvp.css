@@ -1,0 +1,211 @@
+/* Specific styles for the RSVP page */
+
+/* Reset margin and padding on body and html */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Make sure the page takes up the full height */
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Container */
+.navbar {
+    position: fixed; /* Keeps it fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    background-color: #e58154; /* Background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    z-index: 1000; /* Ensure it’s above other elements */
+    padding: 10px 0; /* Space above and below the navbar content */
+}
+
+/* Navbar Menu */
+.navbar-menu {
+    list-style: none; /* Remove default bullet points */
+    display: flex; /* Arrange items horizontally */
+    justify-content: center; /* Center-align the menu items */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Items */
+.navbar-menu li {
+    margin: 0 15px; /* Space between each menu item */
+}
+
+/* Navbar Links */
+.navbar-menu a {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Text color */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Make the text bold */
+    padding: 5px 10px; /* Add padding for clickable area */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
+    border-radius: 5px; /* Rounded corners for hover effect */
+}
+
+.navbar-menu a:hover {
+    background-color: #f1b17c; /* Change background on hover */
+    /* color: rgb(241, 144, 18); Change text color on hover */
+}
+
+/* Bubble Button Styling */
+.bubble-button {
+    display: inline-block; /* Treat the link as a block-level element for proper styling */
+    background-color: #f1b17c; 
+    color: white; /* White text */
+    padding: 12px 25px; /* Add space inside the button */
+    border-radius: 30px; /* Fully rounded corners to create the bubble shape */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Make the text bold */
+    text-decoration: none; /* Remove underline */
+    text-align: center; /* Center text */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for 3D effect */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Bubble Button Hover Effect */
+.bubble-button:hover {
+    background-color: #f7d99d;
+    transform: translateY(-4px); 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+/* Hero section */
+.hero {
+    position: relative;  /* Make sure the hero section is the containing block for absolute positioning */
+    background-color: #e58154;
+    background: linear-gradient(to bottom, rgba(229, 133, 90, 0.1), rgba(247, 217, 157, 0.3)),
+                url('/images/hero.jfif') no-repeat center center/cover;
+    background-size: cover;
+    height: 100vh; /* Adjust this as needed for your design */
+    color: white;
+    text-align: center;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    margin: 0; /* Remove any unwanted margin */
+    padding: 0; /* Remove any unwanted padding */
+}
+
+/* Hero text styling (title and paragraph) */
+.hero .hero-content {
+    position: absolute;
+    top: 15%; /* Vertically center the content */
+    left: 50%; /* Horizontally center the content */
+    transform: translate(-50%, -50%); /* Adjust for true centering */
+    width: 100%;
+    text-align: center;
+    z-index: 1; /* Ensure content is on top of the image */
+}
+
+.hero h1 {
+    font-family: 'Young Serif', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #f7d99d;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    margin: 0; 
+}
+
+.hero p {
+    font-size: 1.5rem; /* Adjust the font size for the paragraph */
+}
+
+/* RSVP Form Styling */
+#rsvp-form-container {
+    position: absolute;
+    top: 20%;  /* Position the form below the text */
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(229, 133, 90, 0.5);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    width: 80%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#rsvp-form-container h2 {
+    font-family: 'Young Serif', serif;
+    font-size: 2rem;
+    color: #333; /* Text color */
+    margin-bottom: 20px;
+    text-align: center; /* Ensure the heading is centered */
+}
+
+/* Form Labels */
+#rsvp-form-container label {
+    font-family: 'Young Serif', serif; /* Font for labels */
+    font-size: 1.1rem;
+    color: #333; /* Color for the label text */
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Input Fields */
+#rsvp-form-container input[type="text"],
+#rsvp-form-container input[type="email"],
+#rsvp-form-container textarea,
+#rsvp-form-container select {
+    width: 100%; /* Make the input fields take up full width */
+    padding: 10px;
+    margin-bottom: 15px; /* Space between the inputs */
+    border: 2px solid #ccc; /* Light border */
+    border-radius: 8px; /* Rounded corners for the input boxes */
+    font-size: 1rem;
+    color: #333; /* Text color inside the input fields */
+    background-color: #f9f9f9; /* Light background color */
+    font-family: 'Young Serif', serif; /* Ensure the input text uses the same font */
+    box-sizing: border-box; /* Ensures padding is included in the element's width */
+}
+
+/* Focus Effect for Input Fields */
+#rsvp-form-container input[type="text"]:focus,
+#rsvp-form-container input[type="email"]:focus,
+#rsvp-form-container textarea:focus,
+#rsvp-form-container select:focus {
+    border-color: #4CAF50; /* Green border on focus */
+    outline: none; /* Remove default focus outline */
+    background-color: #fff; /* White background on focus */
+}
+
+/* Submit Button Styling */
+#rsvp-form-container button[type="submit"] {
+    background-color: #4CAF50; /* Green button background */
+    color: white; /* White text */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Young Serif', serif; /* Same font for the button */
+}
+
+/* Hover effect for submit button */
+#rsvp-form-container button[type="submit"]:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero {
+        height: 60vh; /* Reduce height on mobile */
+    }
+
+    #rsvp-form-container {
+        width: 90%;  /* Form width adjustment for smaller screens */
+    }
+}

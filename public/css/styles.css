@@ -1,0 +1,371 @@
+:root {
+    --about-bg: #ffe6e6;
+    --details-bg: #f9f9f9;
+    --rsvp-bg: #e6f7ff;
+}
+
+body {
+    font-family: 'Young Serif', serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    scroll-behavior: smooth !important;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth !important; /* Smooth scrolling for the entire page */
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    background-color: #e58154;
+    background: linear-gradient(to bottom, rgba(229, 133, 90, 0.5), rgba(247, 217, 157, 0.7)),
+                url('/images/banner.jpeg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(0, 0, 0, 0.5); */
+    z-index: 1;
+}
+.hero-content {
+    font-family: 'Young Serif', serif;
+    position: relative;
+    z-index: 2;
+    padding-top: 700px;
+}
+.hero-content h1 {
+    font-family: 'Young Serif', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #f7d99d;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    margin: 0;
+}
+.hero-content .date {
+    font-size: 1.5em;
+    margin: 10px 0 20px;
+}
+
+/* Button to move down */
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ffffff;
+    color: #333;
+    text-decoration: none;
+    font-size: 1em;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+.cta-button:hover {
+    background: #f4f4f4;
+}
+
+/* Parallax Sections */
+.parallax {
+    height: 50vh; /* Full-screen height */
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center;
+    background-attachment: fixed; /* Creates the parallax effect */
+    background-repeat: no-repeat;
+}
+
+/* About Us Section */
+.about {
+    background-color: var(--about-bg);
+    color: #333; /* Dark text for contrast */
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, rgba(229, 133, 90, 0.5), rgba(247, 217, 157, 0.7));
+}
+
+.about .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about p {
+    font-size: 1em; /* Reduce font size */
+    line-height: 1.5; /* Adjust line height for readability */
+    color: #555; /* Slightly darker text for better contrast */
+}
+
+.about .section-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+
+/* Details Section */
+.details {
+    background-color: var(--details-bg);
+    color: #555; /* Medium text */
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, rgba(229, 133, 90, 0.5), rgba(247, 217, 157, 0.7));
+}
+
+
+/* RSVP Section */
+.rsvp {
+    background-color: var(--rsvp-bg);
+    color: #333; /* Dark text for contrast */
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, rgba(229, 133, 90, 0.5), rgba(247, 217, 157, 0.7));
+}
+
+section {
+    text-align: center;
+    padding: 60px 20px;
+    transition: background 0.3s ease;
+}
+
+
+h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+}
+
+form input, form button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 90%;
+    max-width: 400px;
+    font-size: 1em;
+}
+
+form button {
+    background: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #555;
+}
+
+#details {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+#details h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.hotel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Creates a responsive grid */
+    gap: 30px; /* Space between grid items */
+    margin-top: 30px;
+    justify-items: center;
+}
+
+.hotel-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.hotel-item:hover {
+    transform: translateY(-10px); /* Creates a lift effect on hover */
+}
+
+.hotel-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.hotel-item h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.hotel-item p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.book-button {
+    padding: 10px 20px;
+    background-color: #ff66b3;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.book-button:hover {
+    background-color: #ff3399;
+}
+
+/* Navbar Container */
+.navbar {
+    position: fixed; /* Keeps it fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    background-color: #e58154; /* Background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    z-index: 1000; /* Ensure it’s above other elements */
+    padding: 10px 0; /* Space above and below the navbar content */
+}
+
+/* Navbar Menu */
+.navbar-menu {
+    list-style: none; /* Remove default bullet points */
+    display: flex; /* Arrange items horizontally */
+    justify-content: center; /* Center-align the menu items */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Items */
+.navbar-menu li {
+    margin: 0 15px; /* Space between each menu item */
+}
+
+/* Navbar Links */
+.navbar-menu a {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Text color */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Make the text bold */
+    padding: 5px 10px; /* Add padding for clickable area */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
+    border-radius: 5px; /* Rounded corners for hover effect */
+}
+
+.navbar-menu a:hover {
+    background-color: #f1b17c; /* Change background on hover */
+    /* color: rgb(241, 144, 18); Change text color on hover */
+}
+
+/* Bubble Button Styling */
+.bubble-button {
+    display: inline-block; /* Treat the link as a block-level element for proper styling */
+    background-color: #f1b17c; 
+    color: white; /* White text */
+    padding: 12px 25px; /* Add space inside the button */
+    border-radius: 30px; /* Fully rounded corners to create the bubble shape */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Make the text bold */
+    text-decoration: none; /* Remove underline */
+    text-align: center; /* Center text */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for 3D effect */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Bubble Button Hover Effect */
+.bubble-button:hover {
+    background-color: #f7d99d;
+    transform: translateY(-4px); 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+#rsvp-button {
+    position: absolute;
+    bottom: 20px; /* Position the button 20px from the bottom of the RSVP section */
+    left: 50%;
+    transform: translateX(-50%); /* Center the button horizontally */
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#rsvp-button:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .hero-content .date {
+        font-size: 1.2em;
+    }
+
+    .cta-button {
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .navbar-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-menu li {
+        margin: 10px 0;
+    }
+
+    .parallax {
+        height: 30vh; /* Smaller height for mobile */
+        background-attachment: scroll; /* Fallback for performance on mobile */
+        background-size: cover; /* Adjusts the image for smaller screens */
+    }
+}

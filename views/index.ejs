@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/header'); %>
+    <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul class="navbar-menu">
+            <li><a href="#header" class="bubble-button">Home</a></li> <!-- Home Button -->
+            <li><a href="#about" class="bubble-button">About Us</a></li>
+            <li><a href="#details" class="bubble-button">Details</a></li>
+            <li><a href="/rsvp" class="bubble-button">RSVP</a></li>
+        </ul>
+    </nav>
+    <!-- Section 1: Hero -->
+    <header id="header" class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>We’re Getting Married!</h1>
+            <!-- <p>We’re Getting Married!</p> -->
+            <p class="date">October 11, 2025</p>
+            <a href="#details" class="cta-button">View Details</a>
+            <!-- <button class="details-button"> -->
+                <!-- <a href="#details">Details</a> -->
+            </button>
+
+        </div>
+    </header>
+    
+    <!-- 1st Parallax Image Section -->
+    <section class="parallax" style="background-image: url('/images/photo1.jpg');">
+    </section>
+
+    <!-- Section 2: About Us -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Like all great love stories, Ashley and Carl met in the workplace in the Summer of 2018. Except this workplace was at the University of Illinois, 
+                as campus tour guides, and Ashley was Carl's boss... after many weekly Tuesday hangouts at their favorite bar, Legend's, Phi Sigma Pi, 
+                and bar crawls and barn dances, Ashley and Carl began dating at midnight, Jan. 1st, 2020 going into the decade together.
+            <p>
+                Since then, they tackled COVID lockdown together, long distance while studying at the University of Denver (Carl) and University of 
+                Lincoln-Nebraska (Ashley), and will have spent 3 years in Atlanta, Georgia by the time of their wedding, where their engagement was held over a view of the city 
+                in the company of a few of their closest friends.
+            </p>
+            <p>
+                In this time, Ashley defended her thesis on 
+                <a href="https://digitalcommons.unl.edu/foodscidiss/141/" target="_blank">Evaluating the Efficacy of Germination and Fermentation in Producing Biologically Active Peptides from Pulses</a>,
+                their family now includes two cats, Dumpling and Bao Bun, and Noodle, the noodle dog, and together are thriving happily.
+                When people ask whats new and whats next, they have no answer. They are just taking life one step at a time, knowing they have each 
+                other and want 37 more cats and dogs.
+            </p>
+            <p>
+                We can't wait to have all of our friends and family together for this special day on Oct. 11th, 2025!
+            </p>
+            <img src="/images/aboutus.JPG" alt="Our Story" class="section-image" />
+        </div>
+    </section>
+
+    <!-- 2nd Parallax Image Section -->
+    <section class="parallax" style="background-image: url('/images/photo2.jpg');">
+    </section>
+
+    <!-- Section 3: Details -->
+    <section id="details" class="details">
+        <div class="container">
+            <h2>Event Details</h2>
+            <p>Location: Trolley Barn, Atlanta</p>
+            <p>Time: 5:00 PM</p>
+            <p>963 Edgewood Ave NE, Atlanta, GA 30307</p>
+            <!-- Embedded Google Map -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2789.3990504754756!2d-84.35800478582584!3d33.756190006427836!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f503ff905e1bed%3A0xc1626dc0cd684569!2sTrolley%20Barn!5e0!3m2!1sen!2sus!4v1733498102539!5m2!1sen!2sus" 
+                width="600" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+            <p> We will be holding our wedding reception at the Trolley Barn in Atlanta, GA, held in the beautiful historic Inman Park neighborhood. 
+                The Trolley Barn's history dates back to after the civil war and housed the offices and maintenance depot for the US's first electric 
+                streetcar system. Over the years, the buidlings uses exchanged hands until the Inman Park neighborhood came together to purchase it 
+                and commit to  its restoration and preservation, a crucial part of the very neighborhood that we live in! Learn more 
+                <a href="https://thetrolleybarn.com/about/" target="_blank">here</a>.
+            </p>
+            <p>
+                More details to follow! For now, here are some hotels that you can look into. We recommend staying within 20 min of the venue as the
+                further out you go, the more unpredictable the traffic can be and the arrival time increases dramatically. Below we've curated a list
+                of nearby hotels where you can stay during the wedding weekend!
+            </p>
+                <!-- Hotel Grid -->
+            <div class="hotel-grid">
+                <div class="hotel-item">
+                    <img src="/images/clermont.jpg" alt="Clermont" class="hotel-image">
+                    <h3>Clermont Hotel</h3>
+                    <p>Located 2.2 miles from the venue</p>
+                    <a href="https://www.hotelclermont.com/" target="_blank" class="book-button">Book Now</a>
+                </div>
+
+                <div class="hotel-item">
+                    <img src="/images/wylie.png" alt="Wylie" class="hotel-image">
+                    <h3>Wylie Hotel</h3>
+                    <p>Located 2 miles from the venue</p>
+                    <a href="https://www.wyliehotel.com/" target="_blank" class="book-button">Book Now</a>
+                </div>
+
+                <div class="hotel-item">
+                    <img src="hotel3.jpg" alt="Hotel 3" class="hotel-image">
+                    <h3>Hotel Name 3</h3>
+                    <p>Located 3 miles from the venue</p>
+                    <a href="https://www.examplehotel3.com" target="_blank" class="book-button">Book Now</a>
+                </div>
+
+                <!-- Add more hotel items as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 3nd Parallax Image Section -->
+    <section class="parallax" style="background-image: url('/images/photo3.jpg');">
+    </section>
+
+    <!-- Section 4: RSVP -->
+    <section id="rsvp" class="rsvp">
+        <div class="container">
+            <h2>RSVP</h2>
+            <a href="/rsvp" id="rsvp-bottom-button" class="bubble-button">RSVP Now</a>
+        </div>
+    </section>
+
+    
+
+    <footer>
+        <%- include('partials/footer'); %>
+    </footer>
+</body>
+</html>
+
+
