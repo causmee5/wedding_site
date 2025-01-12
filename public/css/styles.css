@@ -281,6 +281,7 @@ iframe {
     list-style: none;
     margin: 0;
     padding: 0;
+    justify-content: center;
 }
 
 /* Navbar Menu */
@@ -295,6 +296,7 @@ iframe {
 /* Navbar Items */
 .navbar-menu li {
     margin: 0 15px; /* Space between each menu item */
+    display: inline-block
 }
 
 /* Navbar Links */
