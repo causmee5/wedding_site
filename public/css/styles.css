@@ -482,8 +482,30 @@ iframe {
       }
 
     .hotel-grid {
-        grid-template-columns: 1fr; /* Single column for narrow screens */
-    }
+        grid-template-columns: 1fr; /* Make it a single column */
+        gap: 20px; /* Reduce the space between items */
+        padding: 20px; /* Add padding around the grid */
+      }
+    
+      .hotel-item {
+        padding: 10px; /* Reduce the padding inside each item */
+        font-size: 0.9rem; /* Make the text inside the item smaller */
+        max-width: 90%; /* Ensure it doesn’t take up full width */
+        margin: 0 auto; /* Center the items */
+      }
+    
+      .hotel-image {
+        height: 150px; /* Reduce the height of the image */
+        object-fit: cover; /* Keep the aspect ratio of the image */
+      }
+    
+      .hotel-item h3 {
+        font-size: 1.2rem; /* Reduce the heading size */
+      }
+    
+      .hotel-item p {
+        font-size: 0.9rem; /* Make text smaller */
+      }
 
     #rsvp-button {
         font-size: 1rem; /* Slightly smaller font */
