@@ -358,6 +358,14 @@ iframe {
     background-color: #45a049;
 }
 
+footer {
+    font-size: 0.9rem; /* Reduce font size */
+    padding: 20px 0; /* Adjust padding for the footer */
+    text-align: center; /* Center the text */
+    background-color: #333; /* Set a background color for the footer */
+    color: #fff; /* Set the text color */
+}
+
 @media (max-width: 768px) {
 
     #header {
@@ -511,5 +519,10 @@ iframe {
         font-size: 1rem; /* Slightly smaller font */
         padding: 10px 20px;
         bottom: 10px; /* Closer to the bottom */
+    }
+
+    footer {
+        font-size: 0.8rem; /* Further reduce font size on mobile */
+        padding: 15px 0; /* Reduce padding on mobile */
     }
 }
