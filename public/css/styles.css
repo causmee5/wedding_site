@@ -182,6 +182,12 @@ form button:hover {
     color: #333;
 }
 
+iframe {
+    max-width: 100%;
+    height: auto;
+    border: 0;
+}
+
 .hotel-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Creates a responsive grid */
@@ -212,6 +218,12 @@ form button:hover {
     margin-bottom: 20px;
 }
 
+.about .section-image,
+.hotel-image {
+    max-width: 100%; /* Ensure the image fits within the container */
+    height: auto; /* Maintain aspect ratio */
+}
+
 .hotel-item h3 {
     font-size: 1.8rem;
     color: #333;
@@ -238,6 +250,23 @@ form button:hover {
     background-color: #ff3399;
 }
 
+/* Default: Hide hamburger and show menu */
+.hamburger {
+    display: none;
+}
+
+.hamburger.open .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open .line:nth-child(2) {
+    opacity: 0; /* Hide the middle line */
+}
+
+.hamburger.open .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
 /* Navbar Container */
 .navbar {
     position: fixed; /* Keeps it fixed at the top */
@@ -248,6 +277,10 @@ form button:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     z-index: 1000; /* Ensure it’s above other elements */
     padding: 10px 0; /* Space above and below the navbar content */
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 /* Navbar Menu */
@@ -324,16 +357,25 @@ form button:hover {
 }
 
 @media (max-width: 768px) {
+
+    .hero {
+        height: 60vh; /* Shorter hero for smaller devices */
+    }
+
+    .hero-content {
+        padding-top: 300px; /* Adjust padding for smaller screens */
+    }
+
     .hero-content h1 {
-        font-size: 2em;
+        font-size: 1.8rem;
     }
 
     .hero-content .date {
-        font-size: 1.2em;
+        font-size: 1rem;
     }
 
     .cta-button {
-        font-size: 0.9em;
+        font-size: 0.8rem;
         padding: 8px 15px;
     }
 
@@ -345,6 +387,52 @@ form button:hover {
         font-size: 1em;
     }
 
+    .hamburger {
+        display: flex; /* Show hamburger on mobile */
+        flex-direction: column;
+        justify-content: space-around;
+        height: 24px;
+        width: 30px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .hamburger .line {
+        background-color: #333; /* Adjust color */
+        height: 3px;
+        width: 100%;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    .navbar-menu {
+        display: none; /* Hide menu initially on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background-color: white; /* Adjust background color */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+
+    .navbar-menu.active {
+        display: flex; /* Show menu when toggled */
+    }
+
+    .navbar {
+        padding: 15px;
+    }
+
+    /* .navbar-menu a {
+        font-size: 14px;  
+        /* padding: 10px;  
+        align-items: center;
+    }  */
+
     .navbar ul {
         flex-direction: column;
         align-items: center;
@@ -352,11 +440,6 @@ form button:hover {
 
     .navbar ul li {
         margin: 10px 0;
-    }
-
-    .navbar-menu {
-        flex-direction: column;
-        align-items: center;
     }
 
     .navbar-menu li {
@@ -367,5 +450,19 @@ form button:hover {
         height: 30vh; /* Smaller height for mobile */
         background-attachment: scroll; /* Fallback for performance on mobile */
         background-size: cover; /* Adjusts the image for smaller screens */
+    }
+
+    .about .section-image {
+        margin: 10px auto; /* Smaller margin on mobile */
+    }
+
+    .hotel-grid {
+        grid-template-columns: 1fr; /* Single column for narrow screens */
+    }
+
+    #rsvp-button {
+        font-size: 1rem; /* Slightly smaller font */
+        padding: 10px 20px;
+        bottom: 10px; /* Closer to the bottom */
     }
 }
