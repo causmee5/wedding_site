@@ -467,7 +467,7 @@ iframe {
         margin: 10px auto; /* Smaller margin on mobile */
     }
 
-    .details h2 {
+    #details h2 {
         font-size: 0.8rem;
     }
     .hotel-grid {
