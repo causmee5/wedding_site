@@ -359,10 +359,11 @@ iframe {
 }
 
 footer {
-    font-size: 0.9rem; /* Reduce font size */
-    padding: 20px 0; /* Adjust padding for the footer */
+    font-size: 0.8rem; /* Reduce font size */
+    padding: 10px 0; /* Adjust padding for the footer */
     text-align: center; /* Center the text */
-    background-color: #333; /* Set a background color for the footer */
+    /* background-color: #4CAF50; Set a background color for the footer */
+    background-color: rgba(0, 0, 0, 0.1); /* Soft, semi-transparent background */
     color: #fff; /* Set the text color */
 }
 
@@ -522,7 +523,7 @@ footer {
     }
 
     footer {
-        font-size: 0.8rem; /* Further reduce font size on mobile */
-        padding: 15px 0; /* Reduce padding on mobile */
+        font-size: 0.7rem; /* Further reduce font size on mobile */
+        padding: 8px 0; /* Reduce padding on mobile */
     }
 }
