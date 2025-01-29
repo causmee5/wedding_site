@@ -6,17 +6,19 @@
 
 body {
     font-family: 'Young Serif', serif;
-    margin: 0;
-    padding: 0;
     line-height: 1.6;
     scroll-behavior: smooth !important;
 }
 
 html {
-    margin: 0;
-    padding: 0;
     overflow-x: hidden;
     scroll-behavior: smooth !important; /* Smooth scrolling for the entire page */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure full height for proper layout */
 }
 
 /* Hero Section */
@@ -88,7 +90,7 @@ html {
 .about {
     background-color: var(--about-bg);
     color: #333; /* Dark text for contrast */
-    padding: 60px 20px;
+    padding: 10px 10px;
     background: linear-gradient(to bottom, rgba(229, 133, 90, 0.5), rgba(247, 217, 157, 0.7));
 }
 
@@ -104,12 +106,19 @@ html {
     color: #555; /* Slightly darker text for better contrast */
 }
 
+.image-container {
+    display: flex;
+    justify-content: center; /* Center image horizontally */
+    align-items: center; /* Center image vertically if needed */
+    margin: 20px 0; /* Adjust top and bottom spacing */
+}
+
 .about .section-image {
-    max-width: 100%;
+    width: 50%; /* Shrink the image instead of scaling */
+    max-width: 400px; /* Limit max size */
     height: auto;
     display: block;
-    margin: 20px auto;
-    border-radius: 10px;
+    margin: 20px auto; /* Adjust top and bottom spacing */
 }
 
 
@@ -117,7 +126,7 @@ html {
 .details {
     background-color: var(--details-bg);
     color: #555; /* Medium text */
-    padding: 60px 20px;
+    padding: 10px 10px;
     background: linear-gradient(to bottom, rgba(229, 133, 90, 0.5), rgba(247, 217, 157, 0.7));
 }
 
@@ -126,8 +135,14 @@ html {
 .rsvp {
     background-color: var(--rsvp-bg);
     color: #333; /* Dark text for contrast */
-    padding: 60px 20px;
+    padding: 10px 10px;
     background: linear-gradient(to bottom, rgba(229, 133, 90, 0.5), rgba(247, 217, 157, 0.7));
+}
+
+#details p {
+    font-size: 1em; /* Reduce font size */
+    line-height: 1.5; /* Adjust line height for readability */
+    color: #555; /* Slightly darker text for better contrast */
 }
 
 section {
@@ -138,7 +153,7 @@ section {
 
 
 h2 {
-    font-size: 2.5em;
+    font-size: 2.5rem;
     color: #333;
     margin-bottom: 20px;
 }
@@ -172,7 +187,7 @@ form button:hover {
 
 #details {
     text-align: center;
-    padding: 50px 20px;
+    padding: 30px 20px;
     background-color: #f9f9f9;
 }
 
@@ -182,6 +197,11 @@ form button:hover {
     color: #333;
 }
 
+#details p {
+    font-size: 1rem; /* Adjust the paragraph text size here */
+    line-height: 1.6; /* You can adjust the line-height for readability */
+}
+
 iframe {
     max-width: 100%;
     height: auto;
@@ -189,23 +209,29 @@ iframe {
 }
 
 .hotel-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Creates a responsive grid */
-    gap: 30px; /* Space between grid items */
-    margin-top: 30px;
-    justify-items: center;
-    align-items: center; /* Centers grid items vertically if needed */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Adds space between grid items */
+    margin: 0 auto; /* Ensures the grid container itself is centered */
+    max-width: 1200px; /* Optional: You can set a max width for the grid */
+    padding: 20px; /* Optional: Adds some padding around the grid */
 }
 
+/* Hotel Grid Items */
 .hotel-item {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 30%; /* Each item takes up 30% of the container width */
+    min-width: 280px; /* Ensures the items are not too small on smaller screens */
+    max-width: 320px; /* Optional: Limits the size of each item */
+    box-sizing: border-box;
     text-align: center;
-    padding: 20px;
-    transition: transform 0.3s ease;
-    max-width: 100% 
+    margin: 10px; /* Adds space between items */
+    border-radius: 8px; /* Optional: Rounded corners */
+    overflow: hidden; /* Ensures content doesn't spill out */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a soft shadow */
+    padding: 20px; /* Adds padding inside the item */
 }
 
 .hotel-item:hover {
@@ -217,13 +243,7 @@ iframe {
     height: 200px;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-.about .section-image,
-.hotel-image {
-    max-width: 100%; /* Ensure the image fits within the container */
-    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 15px;
 }
 
 .hotel-item h3 {
@@ -278,22 +298,25 @@ iframe {
     background-color: #e58154; /* Background color */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     z-index: 1000; /* Ensure it’s above other elements */
-    padding: 10px 20px; /* Space above and below the navbar content */
+    padding: 20px 30px; /* Space above and below the navbar content */
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
     justify-content: space-between;
     align-items: center;
+    min-height: 50px; /* Adjust as needed */
 }
 
 /* Navbar Menu */
 .navbar-menu {
-    list-style: none; /* Remove default bullet points */
-    display: flex; /* Arrange items horizontally */
-    justify-content: center; /* Center-align the menu items */
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the navbar items */
     margin: 0;
     padding: 0;
+    flex-grow: 1; /* Allow the menu to grow and push items to the left */
 }
 
 /* Navbar Items */
@@ -331,6 +354,7 @@ iframe {
     text-align: center; /* Center text */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for 3D effect */
     transition: all 0.3s ease; /* Smooth transition for hover effects */
+    margin: 5px 15px; /* Add vertical spacing */
 }
 
 /* Bubble Button Hover Effect */
@@ -445,6 +469,7 @@ footer {
 
     .navbar {
         padding: 15px;
+        min-height: auto;
     }
 
     /* .navbar-menu a {
@@ -476,10 +501,6 @@ footer {
         font-size: 0.8rem;
     }
 
-    .about .section-image {
-        margin: 10px auto; /* Smaller margin on mobile */
-    }
-
     #details {
         font-size: 0.8rem; /* Adjust the font size */
         line-height: 1.4; /* Adjust line height for better readability */
@@ -498,25 +519,27 @@ footer {
         grid-template-columns: 1fr; /* Make it a single column */
         gap: 20px; /* Reduce the space between items */
         padding: 20px; /* Add padding around the grid */
+        flex-direction: column; /* Stack items vertically on small screens */
+        justify-content: flex-start; /* Aligns items to the top on mobile */
       }
     
-      .hotel-item {
+    .hotel-item {
         padding: 10px; /* Reduce the padding inside each item */
         font-size: 0.9rem; /* Make the text inside the item smaller */
         max-width: 90%; /* Ensure it doesn’t take up full width */
         margin: 0 auto; /* Center the items */
-      }
+    }
     
-      .hotel-image {
+    .hotel-image {
         height: 150px; /* Reduce the height of the image */
         object-fit: cover; /* Keep the aspect ratio of the image */
       }
     
-      .hotel-item h3 {
+    .hotel-item h3 {
         font-size: 1.2rem; /* Reduce the heading size */
       }
     
-      .hotel-item p {
+    .hotel-item p {
         font-size: 0.9rem; /* Make text smaller */
       }
 
@@ -528,6 +551,29 @@ footer {
 
     footer {
         font-size: 0.3rem; /* Further reduce font size on mobile */
-        padding: 2px 0; /* Reduce padding on mobile */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto; /* Ensures it adjusts to content */
+        padding: 10px 15px; /* Adjust spacing */
+    }
+
+    footer p {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .about .section-image {
+        width: 80%; /* Increase width on smaller screens */
+        max-width: 300px; /* Adjust max-width */
+    }
+}
+@media (max-width: 480px) {
+    .about .section-image {
+        width: 100%; /* Let it take full width if needed */
+        max-width: 250px; /* Prevent it from getting too large */
     }
 }
