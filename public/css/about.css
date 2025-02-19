@@ -1,14 +1,5 @@
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    height: 100%; /* Make sure the page takes up the full height */
-    font-family: Arial, sans-serif;
+:root {
+    --about-bg: #ffe6e6;
 }
 
 /* Navbar Container */
@@ -20,21 +11,31 @@ html, body {
     background-color: #e58154; /* Background color */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     z-index: 1000; /* Ensure it’s above other elements */
-    padding: 10px 0; /* Space above and below the navbar content */
+    padding: 20px 30px; /* Space above and below the navbar content */
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50px; /* Adjust as needed */
 }
 
 /* Navbar Menu */
 .navbar-menu {
-    list-style: none; /* Remove default bullet points */
-    display: flex; /* Arrange items horizontally */
-    justify-content: center; /* Center-align the menu items */
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the navbar items */
     margin: 0;
     padding: 0;
+    flex-grow: 1; /* Allow the menu to grow and push items to the left */
 }
 
 /* Navbar Items */
 .navbar-menu li {
     margin: 0 15px; /* Space between each menu item */
+    display: inline-block;
 }
 
 /* Navbar Links */
@@ -50,54 +51,129 @@ html, body {
 
 .navbar-menu a:hover {
     background-color: #f1b17c; /* Change background on hover */
-    /* color: rgb(241, 144, 18); Change text color on hover */
 }
 
-/* Hero section */
-.hero {
-    position: relative;  /* Make sure the hero section is the containing block for absolute positioning */
-    background-color: #e58154;
-    background: linear-gradient(to bottom, rgba(229, 133, 90, 0.1), rgba(247, 217, 157, 0.3)),
-                url('/images/hero.jfif') no-repeat center center/cover;
-    background-size: cover;
-    height: 100vh; /* Adjust this as needed for your design */
-    color: white;
-    text-align: center;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    margin: 0; /* Remove any unwanted margin */
-    padding: 0; /* Remove any unwanted padding */
+/* Bubble Button Styling */
+.bubble-button {
+    display: inline-block; /* Treat the link as a block-level element for proper styling */
+    background-color: #f1b17c; 
+    color: white; /* White text */
+    padding: 10px 20px; /* Add space inside the button */
+    border-radius: 30px; /* Fully rounded corners to create the bubble shape */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Make the text bold */
+    text-decoration: none; /* Remove underline */
+    text-align: center; /* Center text */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for 3D effect */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    margin: 5px 15px; /* Add vertical spacing */
 }
 
-/* Hero text styling (title and paragraph) */
-.hero .hero-content {
-    position: absolute;
-    top: 15%; /* Vertically center the content */
-    left: 50%; /* Horizontally center the content */
-    transform: translate(-50%, -50%); /* Adjust for true centering */
-    width: 100%;
-    text-align: center;
-    z-index: 1; /* Ensure content is on top of the image */
+/* Bubble Button Hover Effect */
+.bubble-button:hover {
+    background-color: #f7d99d;
+    transform: translateY(-4px); 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
 }
 
-.hero h1 {
-    font-family: 'Young Serif', serif;
-    font-size: 3rem;
-    font-weight: 700;
-    color: #f7d99d;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    margin: 0; 
+.about {
+    background-color: var(--about-bg);
+    color: #333; /* Dark text for contrast */
+    padding: 10px 10px;
+    background: linear-gradient(to bottom, rgba(229, 133, 90, 0.5), rgba(247, 217, 157, 0.7));
 }
 
-.hero p {
-    font-size: 1.5rem; /* Adjust the font size for the paragraph */
+.about .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
+.about p {
+    font-size: 1em; /* Reduce font size */
+    line-height: 1.5; /* Adjust line height for readability */
+    color: #555; /* Slightly darker text for better contrast */
+}
 
-/* Mobile Responsiveness */
+.image-container {
+    display: flex;
+    justify-content: center; /* Center image horizontally */
+    align-items: center; /* Center image vertically if needed */
+    margin: 20px 0; /* Adjust top and bottom spacing */
+}
+
+.about .section-image {
+    width: 50%; /* Shrink the image instead of scaling */
+    max-width: 400px; /* Limit max size */
+    height: auto;
+    display: block;
+    margin: 20px auto; /* Adjust top and bottom spacing */
+}
+
+/* Mobile Responsive Styles */
 @media (max-width: 768px) {
-    .hero {
-        height: 60vh; /* Reduce height on mobile */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 24px;
+        width: 30px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1000;
+        padding: 5px; /* Add padding for better touch interaction */
+    }
+
+    .hamburger .line {
+        background-color: #333; /* Adjust color */
+        height: 3px;
+        width: 100%;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    .navbar-menu {
+        display: none; /* Hide menu initially on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background-color: #e58154; /* Adjust background color */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+
+    .navbar-menu.active {
+        display: flex; /* Show menu when toggled */
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .navbar-menu li {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .about .section-image {
+        width: 80%; /* Increase width on smaller screens */
+        max-width: 300px; /* Adjust max-width */
+    }
+}
+
+@media (max-width: 480px) {
+    .about .section-image {
+        width: 100%; /* Let it take full width if needed */
+        max-width: 250px; /* Prevent it from getting too large */
     }
 }

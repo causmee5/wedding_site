@@ -1,4 +1,78 @@
 /* Details Section */
+/* Navbar Container */
+.navbar {
+    position: fixed; /* Keeps it fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    background-color: #e58154; /* Background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    z-index: 1000; /* Ensure it’s above other elements */
+    padding: 20px 30px; /* Space above and below the navbar content */
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50px; /* Adjust as needed */
+}
+
+/* Navbar Menu */
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the navbar items */
+    margin: 0;
+    padding: 0;
+    flex-grow: 1; /* Allow the menu to grow and push items to the left */
+}
+
+/* Navbar Items */
+.navbar-menu li {
+    margin: 0 15px; /* Space between each menu item */
+    display: inline-block;
+}
+
+/* Navbar Links */
+.navbar-menu a {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Text color */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Make the text bold */
+    padding: 5px 10px; /* Add padding for clickable area */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
+    border-radius: 5px; /* Rounded corners for hover effect */
+}
+
+.navbar-menu a:hover {
+    background-color: #f1b17c; /* Change background on hover */
+}
+
+/* Bubble Button Styling */
+.bubble-button {
+    display: inline-block; /* Treat the link as a block-level element for proper styling */
+    background-color: #f1b17c; 
+    color: white; /* White text */
+    padding: 10px 20px; /* Add space inside the button */
+    border-radius: 30px; /* Fully rounded corners to create the bubble shape */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Make the text bold */
+    text-decoration: none; /* Remove underline */
+    text-align: center; /* Center text */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for 3D effect */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    margin: 5px 15px; /* Add vertical spacing */
+}
+
+/* Bubble Button Hover Effect */
+.bubble-button:hover {
+    background-color: #f7d99d;
+    transform: translateY(-4px); 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
 .details {
     background-color: var(--details-bg);
     color: #555; /* Medium text */
@@ -95,7 +169,60 @@ iframe {
     background-color: #ff3399;
 }
 
-/* Responsive Styles */
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 24px;
+        width: 30px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1000;
+        padding: 5px; /* Add padding for better touch interaction */
+    }
+
+    .hamburger .line {
+        background-color: #333; /* Adjust color */
+        height: 3px;
+        width: 100%;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    .navbar-menu {
+        display: none; /* Hide menu initially on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background-color: #e58154; /* Adjust background color */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+
+    .navbar-menu.active {
+        display: flex; /* Show menu when toggled */
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .navbar-menu li {
+        margin: 10px 0;
+    }
+}
+
 @media (max-width: 768px) {
     #details {
         font-size: 0.8rem; /* Adjust the font size */

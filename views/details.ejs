@@ -7,14 +7,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
 </head>
 
-<!-- Navbar -->
-<nav class="navbar">
-    <ul class="navbar-menu">
-        <li><a href="/" class="bubble-button">Home</a></li> <!-- Home Button -->
-        <li><a href="/#about" class="bubble-button">About Us</a></li>
-        <li><a href="/#details" class="bubble-button">Details</a></li>
-        <li><a href="/#rsvp" class="bubble-button">RSVP</a></li>
-    </ul>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <button class="hamburger" aria-label="Toggle navigation">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+        <ul class="navbar-menu">
+            <li><a href="/" class="bubble-button">Home</a></li>
+            <li><a href="/about" class="bubble-button">About Us</a></li>
+            <li><a href="/details" class="bubble-button">Details</a></li>
+            <li><a href="/rsvp" class="bubble-button">RSVP</a></li>
+        </ul>
     </nav>
 
 <body>
@@ -63,11 +68,12 @@
                     <p>Located 2 miles from the venue</p>
                     <a href="https://www.wyliehotel.com/" target="_blank" class="book-button">Book Now</a>
                 </div>
+            </div>
         </div>
     </section>
 
-    <!-- <footer>
-        <%- include('/partials/footer'); %>
-    </footer> -->
+    <footer>
+        <%- include('partials/footer'); %>
+    </footer>
 </body>
 </html>

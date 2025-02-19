@@ -27,3 +27,10 @@ Thumbs.db
 # Local environment variables
 .env
 .env.local
+
+# Large files
+*.zip
+*.mp4
+*.avi
+*.pdf
+*.exe
