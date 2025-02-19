@@ -1,0 +1,103 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Make sure the page takes up the full height */
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Container */
+.navbar {
+    position: fixed; /* Keeps it fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    background-color: #e58154; /* Background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    z-index: 1000; /* Ensure it’s above other elements */
+    padding: 10px 0; /* Space above and below the navbar content */
+}
+
+/* Navbar Menu */
+.navbar-menu {
+    list-style: none; /* Remove default bullet points */
+    display: flex; /* Arrange items horizontally */
+    justify-content: center; /* Center-align the menu items */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Items */
+.navbar-menu li {
+    margin: 0 15px; /* Space between each menu item */
+}
+
+/* Navbar Links */
+.navbar-menu a {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Text color */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Make the text bold */
+    padding: 5px 10px; /* Add padding for clickable area */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
+    border-radius: 5px; /* Rounded corners for hover effect */
+}
+
+.navbar-menu a:hover {
+    background-color: #f1b17c; /* Change background on hover */
+    /* color: rgb(241, 144, 18); Change text color on hover */
+}
+
+/* Hero section */
+.hero {
+    position: relative;  /* Make sure the hero section is the containing block for absolute positioning */
+    background-color: #e58154;
+    background: linear-gradient(to bottom, rgba(229, 133, 90, 0.1), rgba(247, 217, 157, 0.3)),
+                url('/images/hero.jfif') no-repeat center center/cover;
+    background-size: cover;
+    height: 100vh; /* Adjust this as needed for your design */
+    color: white;
+    text-align: center;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    margin: 0; /* Remove any unwanted margin */
+    padding: 0; /* Remove any unwanted padding */
+}
+
+/* Hero text styling (title and paragraph) */
+.hero .hero-content {
+    position: absolute;
+    top: 15%; /* Vertically center the content */
+    left: 50%; /* Horizontally center the content */
+    transform: translate(-50%, -50%); /* Adjust for true centering */
+    width: 100%;
+    text-align: center;
+    z-index: 1; /* Ensure content is on top of the image */
+}
+
+.hero h1 {
+    font-family: 'Young Serif', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #f7d99d;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    margin: 0; 
+}
+
+.hero p {
+    font-size: 1.5rem; /* Adjust the font size for the paragraph */
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero {
+        height: 60vh; /* Reduce height on mobile */
+    }
+}
