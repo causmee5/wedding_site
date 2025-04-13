@@ -1,8 +1,73 @@
 :root {
     --about-bg: #ffe6e6;
+    --details-bg: #f9f9f9;
+    --rsvp-bg: #e6f7ff;
 }
 
-/* Navbar Container */
+body {
+    font-family: 'Young Serif', serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    scroll-behavior: smooth !important;
+}
+
+.about {
+    background-color: var(--about-bg);
+    flex: 1;
+    color: #333;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 60px;
+    scroll-snap-align: start;
+    background: linear-gradient(to bottom, rgba(229, 133, 90, 0.5), rgba(247, 217, 157, 0.7));
+}
+
+.about h2 {
+    margin-top: 0;
+}
+
+.about-photo {
+    width: 60%;          /* Shrink image more */
+    max-width: 300px;    /* Limit large screen size */
+    height: auto;
+    border-radius: 10px;
+    margin: 20px auto;
+    display: block;
+}
+
+
+.about .container {
+    padding: 40px 30px;
+    padding-top: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.about p {
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    font-size: 1.1rem;
+    color: #555; /* Slightly darker text for better contrast */
+}
+
 .navbar {
     position: fixed; /* Keeps it fixed at the top */
     top: 0;
@@ -21,7 +86,6 @@
     min-height: 50px; /* Adjust as needed */
 }
 
-/* Navbar Menu */
 .navbar-menu {
     list-style: none;
     display: flex;
@@ -32,13 +96,11 @@
     flex-grow: 1; /* Allow the menu to grow and push items to the left */
 }
 
-/* Navbar Items */
 .navbar-menu li {
     margin: 0 15px; /* Space between each menu item */
-    display: inline-block;
+    display: inline-block
 }
 
-/* Navbar Links */
 .navbar-menu a {
     text-decoration: none; /* Remove underline */
     color: #333; /* Text color */
@@ -51,67 +113,72 @@
 
 .navbar-menu a:hover {
     background-color: #f1b17c; /* Change background on hover */
+    /* color: rgb(241, 144, 18); Change text color on hover */
 }
 
-/* Bubble Button Styling */
-.bubble-button {
-    display: inline-block; /* Treat the link as a block-level element for proper styling */
-    background-color: #f1b17c; 
-    color: white; /* White text */
-    padding: 10px 20px; /* Add space inside the button */
-    border-radius: 30px; /* Fully rounded corners to create the bubble shape */
-    font-size: 16px; /* Font size */
-    font-weight: bold; /* Make the text bold */
-    text-decoration: none; /* Remove underline */
-    text-align: center; /* Center text */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for 3D effect */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
-    margin: 5px 15px; /* Add vertical spacing */
+/* Default: Hide hamburger and show menu */
+.hamburger {
+    display: none;
 }
 
-/* Bubble Button Hover Effect */
-.bubble-button:hover {
-    background-color: #f7d99d;
-    transform: translateY(-4px); 
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+.hamburger.open .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
 }
 
-.about {
-    background-color: var(--about-bg);
-    color: #333; /* Dark text for contrast */
-    padding: 10px 10px;
-    background: linear-gradient(to bottom, rgba(229, 133, 90, 0.5), rgba(247, 217, 157, 0.7));
+.hamburger.open .line:nth-child(2) {
+    opacity: 0; /* Hide the middle line */
 }
 
-.about .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
+.hamburger.open .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
-.about p {
-    font-size: 1em; /* Reduce font size */
-    line-height: 1.5; /* Adjust line height for readability */
-    color: #555; /* Slightly darker text for better contrast */
+footer {
+    font-size: 0.5rem; /* Reduce font size */
+    padding: 2px 0; /* Adjust padding for the footer */
+    text-align: center; /* Center the text */
+    background-color: #e58154; 
+    color: #fff; /* Set the text color */
+    margin-top: auto;
+    flex-shrink: 0;
 }
 
-.image-container {
-    display: flex;
-    justify-content: center; /* Center image horizontally */
-    align-items: center; /* Center image vertically if needed */
-    margin: 20px 0; /* Adjust top and bottom spacing */
-}
-
-.about .section-image {
-    width: 50%; /* Shrink the image instead of scaling */
-    max-width: 400px; /* Limit max size */
-    height: auto;
-    display: block;
-    margin: 20px auto; /* Adjust top and bottom spacing */
-}
-
-/* Mobile Responsive Styles */
 @media (max-width: 768px) {
+
+    #header {
+        padding-top: 50px; /* Adjust this value to reduce space */
+      }
+
+    .hero {
+        padding: 0;
+        height: 60vh; /* Shorter hero for smaller devices */
+    }
+
+    .hero-content {
+        padding-top: 300px; /* Adjust padding for smaller screens */
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content .date {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        font-size: 0.8rem;
+        padding: 8px 15px;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
     .hamburger {
         display: flex;
         flex-direction: column;
@@ -150,6 +217,17 @@
         display: flex; /* Show menu when toggled */
     }
 
+    .navbar {
+        padding: 15px;
+        min-height: auto;
+    }
+
+    /* .navbar-menu a {
+        font-size: 14px;  
+        /* padding: 10px;  
+        align-items: center;
+    }  */
+
     .navbar ul {
         flex-direction: column;
         align-items: center;
@@ -162,6 +240,79 @@
     .navbar-menu li {
         margin: 10px 0;
     }
+
+    .parallax {
+        height: 30vh; /* Smaller height for mobile */
+        background-attachment: scroll; /* Fallback for performance on mobile */
+        background-size: cover; /* Adjusts the image for smaller screens */
+    }
+
+    .about p {
+        font-size: 0.8rem;
+    }
+
+    #details {
+        font-size: 0.8rem; /* Adjust the font size */
+        line-height: 1.4; /* Adjust line height for better readability */
+      }
+    
+      #details h2 {
+        font-size: 1.5rem; /* Adjust the heading size for mobile */
+      }
+    
+      #details p {
+        font-size: 0.8rem; /* Adjust paragraph text size */
+        margin-bottom: 15px; /* Adjust spacing */
+      }
+
+    .hotel-grid {
+        grid-template-columns: 1fr; /* Make it a single column */
+        gap: 20px; /* Reduce the space between items */
+        padding: 20px; /* Add padding around the grid */
+        flex-direction: column; /* Stack items vertically on small screens */
+        justify-content: flex-start; /* Aligns items to the top on mobile */
+      }
+    
+    .hotel-item {
+        padding: 10px; /* Reduce the padding inside each item */
+        font-size: 0.9rem; /* Make the text inside the item smaller */
+        max-width: 90%; /* Ensure it doesn’t take up full width */
+        margin: 0 auto; /* Center the items */
+    }
+    
+    .hotel-image {
+        height: 150px; /* Reduce the height of the image */
+        object-fit: cover; /* Keep the aspect ratio of the image */
+      }
+    
+    .hotel-item h3 {
+        font-size: 1.2rem; /* Reduce the heading size */
+      }
+    
+    .hotel-item p {
+        font-size: 0.9rem; /* Make text smaller */
+      }
+
+    #rsvp-button {
+        font-size: 1rem; /* Slightly smaller font */
+        padding: 10px 20px;
+        bottom: 10px; /* Closer to the bottom */
+    }
+
+    footer {
+        font-size: 0.3rem; /* Further reduce font size on mobile */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto; /* Ensures it adjusts to content */
+        padding: 10px 15px; /* Adjust spacing */
+    }
+
+    footer p {
+        margin: 0;
+        padding: 0;
+    }
 }
 
 @media (max-width: 768px) {
@@ -170,7 +321,6 @@
         max-width: 300px; /* Adjust max-width */
     }
 }
-
 @media (max-width: 480px) {
     .about .section-image {
         width: 100%; /* Let it take full width if needed */

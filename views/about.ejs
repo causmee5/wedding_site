@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/css/about.css">
+    <%- include('partials/header_about', { customStyles: 'about' }) %>
+    <link rel="stylesheet" href="/styles/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body>
     <!-- Navbar -->
     <nav class="navbar">
@@ -26,6 +24,7 @@
     <section class="about">
         <div class="container">
             <h2>About Us</h2>
+            <img src="/images/photo1.jpg" alt="Ashley and Carl" class="about-photo" />
             <p>
                 Like all great love stories, Ashley and Carl met in college. Their story began in the summer of 2018 at the University of Illinois,  where they were campus tour guides and Ashley was Carl’s boss . . .
             </p>
