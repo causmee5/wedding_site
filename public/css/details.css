@@ -1,100 +1,77 @@
-/* Details Section */
-/* Navbar Container */
-.navbar {
-    position: fixed; /* Keeps it fixed at the top */
-    top: 0;
-    left: 0;
-    width: 100%; /* Full width */
-    background-color: #e58154; /* Background color */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    z-index: 1000; /* Ensure it’s above other elements */
-    padding: 20px 30px; /* Space above and below the navbar content */
+@font-face {
+    font-family: 'Lucidity Condensed';
+    src: url('/fonts/lucidity-condensed.woff2') format('woff2'),
+         url('/fonts/lucidity-condensed.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --about-bg: #ffe6e6;
+    --details-bg: #f9f9f9;
+    --rsvp-bg: #e6f7ff;
+}
+  
+/* Keep Lucidity Condensed for headings and nav */
+h1, h2, h3, h4, .navbar, .bubble-button {
+font-family: 'Lucidity Condensed', sans-serif;
+letter-spacing: 0.5px;
+}
+
+body {
+    font-family: 'Prompt', sans-serif;
+    font-size: 1.05rem;
+    letter-spacing: 0.4px;
+    line-height: 1.6;
+    font-weight: 400;
     display: flex;
-    list-style: none;
+    flex-direction: column;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+}
+
+html, body {
     margin: 0;
     padding: 0;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 50px; /* Adjust as needed */
-}
-
-/* Navbar Menu */
-.navbar-menu {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Center the navbar items */
-    margin: 0;
-    padding: 0;
-    flex-grow: 1; /* Allow the menu to grow and push items to the left */
-}
-
-/* Navbar Items */
-.navbar-menu li {
-    margin: 0 15px; /* Space between each menu item */
-    display: inline-block;
-}
-
-/* Navbar Links */
-.navbar-menu a {
-    text-decoration: none; /* Remove underline */
-    color: #333; /* Text color */
-    font-size: 16px; /* Font size */
-    font-weight: bold; /* Make the text bold */
-    padding: 5px 10px; /* Add padding for clickable area */
-    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
-    border-radius: 5px; /* Rounded corners for hover effect */
-}
-
-.navbar-menu a:hover {
-    background-color: #f1b17c; /* Change background on hover */
-}
-
-/* Bubble Button Styling */
-.bubble-button {
-    display: inline-block; /* Treat the link as a block-level element for proper styling */
-    background-color: #f1b17c; 
-    color: white; /* White text */
-    padding: 10px 20px; /* Add space inside the button */
-    border-radius: 30px; /* Fully rounded corners to create the bubble shape */
-    font-size: 16px; /* Font size */
-    font-weight: bold; /* Make the text bold */
-    text-decoration: none; /* Remove underline */
-    text-align: center; /* Center text */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for 3D effect */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
-    margin: 5px 15px; /* Add vertical spacing */
-}
-
-/* Bubble Button Hover Effect */
-.bubble-button:hover {
-    background-color: #f7d99d;
-    transform: translateY(-4px); 
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    height: 100%;
+    scroll-behavior: smooth !important;
 }
 
 .details {
-    background-color: var(--details-bg);
-    color: #555; /* Medium text */
-    padding: 10px 10px;
+    background-color: var(--about-bg);
+    flex: 1;
+    color: #333;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 60px;
+    scroll-snap-align: start;
     background: linear-gradient(to bottom, rgba(229, 133, 90, 0.5), rgba(247, 217, 157, 0.7));
 }
 
-#details {
-    text-align: center;
-    padding: 30px 20px;
-    background-color: #f9f9f9;
+.details h2 {
+    margin-top: 0;
 }
 
-#details h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #333;
+.details-container {
+    padding: 40px 30px;
+    padding-top: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-#details p {
-    font-size: 1rem; /* Adjust the paragraph text size */
-    line-height: 1.6; /* Adjust the line-height for readability */
+.details p {
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    font-size: 1.1rem;
     color: #555; /* Slightly darker text for better contrast */
 }
 
@@ -169,8 +146,123 @@ iframe {
     background-color: #ff3399;
 }
 
+/* Bubble Button Styling */
+.bubble-button {
+    display: inline-block; /* Treat the link as a block-level element for proper styling */
+    background-color: #f1b17c; 
+    color: white; /* White text */
+    padding: 10px 20px; /* Add space inside the button */
+    border-radius: 30px; /* Fully rounded corners to create the bubble shape */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Make the text bold */
+    text-decoration: none; /* Remove underline */
+    text-align: center; /* Center text */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for 3D effect */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    margin: 5px 15px; /* Add vertical spacing */
+}
+
+/* Bubble Button Hover Effect */
+.bubble-button:hover {
+    background-color: #f7d99d;
+    transform: translateY(-4px); 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+.navbar {
+    position: fixed; /* Keeps it fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    background-color: #e58154; /* Background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    z-index: 1000; /* Ensure it’s above other elements */
+    padding: 20px 30px; /* Space above and below the navbar content */
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50px; /* Adjust as needed */
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the navbar items */
+    margin: 0;
+    padding: 0;
+    flex-grow: 1; /* Allow the menu to grow and push items to the left */
+}
+
+.navbar-menu li {
+    margin: 0 15px; /* Space between each menu item */
+    display: inline-block
+}
+
+.navbar-menu a {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Text color */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Make the text bold */
+    padding: 5px 10px; /* Add padding for clickable area */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
+    border-radius: 5px; /* Rounded corners for hover effect */
+}
+
+.navbar-menu a:hover {
+    background-color: #f1b17c; /* Change background on hover */
+    /* color: rgb(241, 144, 18); Change text color on hover */
+}
+
+/* Default: Hide hamburger and show menu */
+.hamburger {
+    display: none;
+}
+
+.hamburger.open .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open .line:nth-child(2) {
+    opacity: 0; /* Hide the middle line */
+}
+
+.hamburger.open .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+footer {
+    font-size: 0.5rem; /* Reduce font size */
+    padding: 2px 0; /* Adjust padding for the footer */
+    text-align: center; /* Center the text */
+    background-color: #e58154; 
+    color: #fff; /* Set the text color */
+    margin-top: auto;
+    flex-shrink: 0;
+}
+
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
+    #header {
+        padding-top: 50px; /* Adjust this value to reduce space */
+      }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .cta-button {
+        font-size: 0.8rem;
+        padding: 8px 15px;
+    }
+
     .hamburger {
         display: flex;
         flex-direction: column;
@@ -207,6 +299,11 @@ iframe {
 
     .navbar-menu.active {
         display: flex; /* Show menu when toggled */
+    }
+
+    .navbar {
+        padding: 15px;
+        min-height: auto;
     }
 
     .navbar ul {

@@ -1,12 +1,29 @@
+@font-face {
+    font-family: 'Lucidity Condensed';
+    src: url('/fonts/lucidity-condensed.woff2') format('woff2'),
+         url('/fonts/lucidity-condensed.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     --about-bg: #ffe6e6;
     --details-bg: #f9f9f9;
     --rsvp-bg: #e6f7ff;
 }
 
+/* Keep Lucidity Condensed for headings and nav */
+h1, h2, h3, h4, .navbar, .bubble-button {
+    font-family: 'Lucidity Condensed', sans-serif;
+    letter-spacing: 0.5px;
+    }
+    
 body {
-    font-family: 'Young Serif', serif;
+    font-family: 'Prompt', sans-serif;
+    font-size: 1.05rem;
+    letter-spacing: 0.4px;
     line-height: 1.6;
+    font-weight: 400;
     display: flex;
     flex-direction: column;
 }

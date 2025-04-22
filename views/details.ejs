@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500&display=swap" rel="stylesheet">
+    <%- include('partials/header_details', { customStyles: 'details' }) %>
+    <link rel="stylesheet" href="/styles/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/details.css">
-    <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
 </head>
-
+<body>
     <!-- Navbar -->
     <nav class="navbar">
         <button class="hamburger" aria-label="Toggle navigation">
@@ -21,8 +21,6 @@
             <li><a href="/rsvp" class="bubble-button">RSVP</a></li>
         </ul>
     </nav>
-
-<body>
     <section class="details">
         <div class="container">
             <h2>Event Details</h2>
@@ -75,5 +73,6 @@
     <footer>
         <%- include('partials/footer'); %>
     </footer>
+
 </body>
 </html>

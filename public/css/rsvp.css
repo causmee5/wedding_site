@@ -1,20 +1,182 @@
-/* Specific styles for the RSVP page */
+@font-face {
+    font-family: 'Lucidity Condensed';
+    src: url('/fonts/lucidity-condensed.woff2') format('woff2'),
+         url('/fonts/lucidity-condensed.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
-/* Reset margin and padding on body and html */
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --primary-color: #e58154;
+    --accent-color: #f1b17c;
+    --hover-color: #f7d99d;
+    --form-bg: rgba(229, 133, 90, 0.2); /* More opaque peach */
+    --text-color: #333;
+    --input-bg: #f9f9f9;
+  }
+
+/* Keep Lucidity Condensed for headings and nav */
+h1, h2, h3, h4, .navbar, .bubble-button {
+    font-family: 'Lucidity Condensed', sans-serif;
+    letter-spacing: 0.5px;
+    }
+    
+body {
+    font-family: 'Prompt', sans-serif;
+    font-size: 1rem;
+    color: var(--text-color);
+    background: linear-gradient(to bottom, rgba(229, 133, 90, 0.5), rgba(247, 217, 157, 0.7));
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    }
+
+#rsvp-form-container h2,
+#rsvp-form-container label {
+    font-family: 'Lucidity Condensed', sans-serif;
+}
+
+#rsvp-form-container input[type="text"],
+#rsvp-form-container input[type="email"],
+#rsvp-form-container textarea,
+#rsvp-form-container select {
+    font-family: 'Prompt', sans-serif;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
 }
 
 html, body {
-    height: 100%; /* Make sure the page takes up the full height */
-    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    scroll-behavior: smooth !important;
 }
 
-/* Navbar Container */
+/* RSVP Section */
+.rsvp-section {
+    padding: 120px 20px 60px; /* 120px top pushes it below navbar */
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to bottom, rgba(229, 133, 90, 0.5), rgba(247, 217, 157, 0.7));
+}
+
+/* Form Container */
+#rsvp-form-container {
+    background-color: var(--form-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 600px;
+    width: 100%;
+    border: 1px solid #e58154;
+  }
+
+#rsvp-form-container h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+
+/* Labels */
+#rsvp-form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+
+/* Inputs & Textareas */
+#rsvp-form-container input[type="text"],
+#rsvp-form-container textarea,
+#rsvp-form-container select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  background-color: var(--input-bg);
+  font-size: 1rem;
+  transition: border 0.2s ease;
+}
+
+#rsvp-form-container input:focus,
+#rsvp-form-container textarea:focus,
+#rsvp-form-container select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  background-color: #fff;
+}
+
+/* Submit Button */
+#rsvp-form-container button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Centering */
+    display: block;
+    margin: 0 auto;
+  }
+
+/* Hover effect for submit button */
+#rsvp-form-container button[type="submit"]:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+#rsvp-form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#rsvp-form-container label {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+#rsvp-form-container input[type="text"],
+#rsvp-form-container textarea,
+#rsvp-form-container select {
+    width: 80%; /* narrower for centered look */
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Bubble Button Styling */
+.bubble-button {
+    display: inline-block; /* Treat the link as a block-level element for proper styling */
+    background-color: #f1b17c; 
+    color: white; /* White text */
+    padding: 10px 20px; /* Add space inside the button */
+    border-radius: 30px; /* Fully rounded corners to create the bubble shape */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Make the text bold */
+    text-decoration: none; /* Remove underline */
+    text-align: center; /* Center text */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for 3D effect */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    margin: 5px 15px; /* Add vertical spacing */
+}
+
+/* Bubble Button Hover Effect */
+.bubble-button:hover {
+    background-color: #f7d99d;
+    transform: translateY(-4px); 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
 .navbar {
     position: fixed; /* Keeps it fixed at the top */
     top: 0;
@@ -23,24 +185,31 @@ html, body {
     background-color: #e58154; /* Background color */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     z-index: 1000; /* Ensure it’s above other elements */
-    padding: 10px 0; /* Space above and below the navbar content */
-}
-
-/* Navbar Menu */
-.navbar-menu {
-    list-style: none; /* Remove default bullet points */
-    display: flex; /* Arrange items horizontally */
-    justify-content: center; /* Center-align the menu items */
+    padding: 20px 30px; /* Space above and below the navbar content */
+    display: flex;
+    list-style: none;
     margin: 0;
     padding: 0;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50px; /* Adjust as needed */
 }
 
-/* Navbar Items */
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the navbar items */
+    margin: 0;
+    padding: 0;
+    flex-grow: 1; /* Allow the menu to grow and push items to the left */
+}
+
 .navbar-menu li {
     margin: 0 15px; /* Space between each menu item */
+    display: inline-block
 }
 
-/* Navbar Links */
 .navbar-menu a {
     text-decoration: none; /* Remove underline */
     color: #333; /* Text color */
@@ -56,156 +225,51 @@ html, body {
     /* color: rgb(241, 144, 18); Change text color on hover */
 }
 
-/* Bubble Button Styling */
-.bubble-button {
-    display: inline-block; /* Treat the link as a block-level element for proper styling */
-    background-color: #f1b17c; 
-    color: white; /* White text */
-    padding: 12px 25px; /* Add space inside the button */
-    border-radius: 30px; /* Fully rounded corners to create the bubble shape */
-    font-size: 16px; /* Font size */
-    font-weight: bold; /* Make the text bold */
-    text-decoration: none; /* Remove underline */
-    text-align: center; /* Center text */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for 3D effect */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
+/* Default: Hide hamburger and show menu */
+.hamburger {
+    display: none;
 }
 
-/* Bubble Button Hover Effect */
-.bubble-button:hover {
-    background-color: #f7d99d;
-    transform: translateY(-4px); 
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+.hamburger.open .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
 }
 
-/* Hero section */
-.hero {
-    position: relative;  /* Make sure the hero section is the containing block for absolute positioning */
-    background-color: #e58154;
-    background: linear-gradient(to bottom, rgba(229, 133, 90, 0.1), rgba(247, 217, 157, 0.3)),
-                url('/images/hero.jfif') no-repeat center center/cover;
-    background-size: cover;
-    height: 100vh; /* Adjust this as needed for your design */
-    color: white;
-    text-align: center;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    margin: 0; /* Remove any unwanted margin */
-    padding: 0; /* Remove any unwanted padding */
+.hamburger.open .line:nth-child(2) {
+    opacity: 0; /* Hide the middle line */
 }
 
-/* Hero text styling (title and paragraph) */
-.hero .hero-content {
-    position: absolute;
-    top: 15%; /* Vertically center the content */
-    left: 50%; /* Horizontally center the content */
-    transform: translate(-50%, -50%); /* Adjust for true centering */
-    width: 100%;
-    text-align: center;
-    z-index: 1; /* Ensure content is on top of the image */
+.hamburger.open .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
-.hero h1 {
-    font-family: 'Young Serif', serif;
-    font-size: 3rem;
-    font-weight: 700;
-    color: #f7d99d;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    margin: 0; 
-}
-
-.hero p {
-    font-size: 1.5rem; /* Adjust the font size for the paragraph */
-}
-
-/* RSVP Form Styling */
-#rsvp-form-container {
-    position: absolute;
-    top: 20%;  /* Position the form below the text */
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(229, 133, 90, 0.5);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 3;
-    width: 80%;
-    max-width: 600px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#rsvp-form-container h2 {
-    font-family: 'Young Serif', serif;
-    font-size: 2rem;
-    color: #333; /* Text color */
-    margin-bottom: 20px;
-    text-align: center; /* Ensure the heading is centered */
-}
-
-/* Form Labels */
-#rsvp-form-container label {
-    font-family: 'Young Serif', serif; /* Font for labels */
-    font-size: 1.1rem;
-    color: #333; /* Color for the label text */
-    margin-bottom: 5px;
-    display: block;
-}
-
-/* Input Fields */
-#rsvp-form-container input[type="text"],
-#rsvp-form-container input[type="email"],
-#rsvp-form-container textarea,
-#rsvp-form-container select {
-    width: 100%; /* Make the input fields take up full width */
-    padding: 10px;
-    margin-bottom: 15px; /* Space between the inputs */
-    border: 2px solid #ccc; /* Light border */
-    border-radius: 8px; /* Rounded corners for the input boxes */
-    font-size: 1rem;
-    color: #333; /* Text color inside the input fields */
-    background-color: #f9f9f9; /* Light background color */
-    font-family: 'Young Serif', serif; /* Ensure the input text uses the same font */
-    box-sizing: border-box; /* Ensures padding is included in the element's width */
-}
-
-/* Focus Effect for Input Fields */
-#rsvp-form-container input[type="text"]:focus,
-#rsvp-form-container input[type="email"]:focus,
-#rsvp-form-container textarea:focus,
-#rsvp-form-container select:focus {
-    border-color: #4CAF50; /* Green border on focus */
-    outline: none; /* Remove default focus outline */
-    background-color: #fff; /* White background on focus */
-}
-
-/* Submit Button Styling */
-#rsvp-form-container button[type="submit"] {
-    background-color: #4CAF50; /* Green button background */
-    color: white; /* White text */
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-family: 'Young Serif', serif; /* Same font for the button */
-}
-
-/* Hover effect for submit button */
-#rsvp-form-container button[type="submit"]:hover {
-    background-color: #45a049; /* Darker green on hover */
+footer {
+    font-size: 0.5rem; /* Reduce font size */
+    padding: 2px 0; /* Adjust padding for the footer */
+    text-align: center; /* Center the text */
+    background-color: #e58154; 
+    color: #fff; /* Set the text color */
+    margin-top: auto;
+    flex-shrink: 0;
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-    .hero {
-        height: 60vh; /* Reduce height on mobile */
+    .navbar-menu {
+      display: none;
+      flex-direction: column;
+      background-color: var(--primary-color);
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      padding: 10px 0;
     }
-
-    #rsvp-form-container {
-        width: 90%;  /* Form width adjustment for smaller screens */
+  
+    .navbar-menu.active {
+      display: flex;
     }
-}
+  
+    .hamburger {
+      display: flex;
+    }
+  }
