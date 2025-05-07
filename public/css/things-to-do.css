@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'AA PENNY';
     src: url('/fonts/AA PENNY.woff2') format('woff2'),
-         url('/fonts/AA PENNY.woff') format('woff');
+            url('/fonts/AA PENNY.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -10,8 +10,11 @@
     --about-bg: #ffe6e6;
     --details-bg: #f9f9f9;
     --rsvp-bg: #e6f7ff;
-}
-  
+    --faq-bg: #fffaf5;
+    --things-to-do-bg: #fffaf5;
+    }
+
+/* Keep AA PENNY for headings and nav */
 h1, h2, h3, h4, .navbar, .bubble-button {
     font-family: 'AA PENNY', sans-serif;
     letter-spacing: 0.2px;
@@ -39,7 +42,8 @@ html, body {
     scroll-behavior: smooth !important;
 }
 
-.details {
+/* === THINGS TO DO PAGE === */
+.things-to-do {
     background-color: var(--about-bg);
     flex: 1;
     color: #333;
@@ -52,11 +56,7 @@ html, body {
     background: linear-gradient(to bottom, rgba(229, 133, 90, 0.5), rgba(247, 217, 157, 0.7));
 }
 
-.details h2 {
-    margin-top: 0;
-}
-
-.details-container {
+.things-container {
     padding: 40px 30px;
     padding-top: 10px;
     max-width: 800px;
@@ -66,7 +66,17 @@ html, body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-.details p {
+.things-container h2 {
+    font-family: 'AA PENNY', sans-serif;
+    font-size: 2.2rem;
+    color: #333;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.things-container p {
+    font-family: 'AA PENNY', sans-serif;
     line-height: 1.6;
     max-width: 800px;
     margin: 0 auto 20px;
@@ -74,98 +84,10 @@ html, body {
     color: #555; /* Slightly darker text for better contrast */
 }
 
-iframe {
-    max-width: 100%;
-    height: auto;
-    border: 0;
-}
-
-/* Hotel Grid */
-.hotel-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px; /* Adds space between grid items */
-    margin: 0 auto; /* Ensures the grid container itself is centered */
-    max-width: 1200px; /* Optional: You can set a max width for the grid */
-    padding: 20px; /* Optional: Adds some padding around the grid */
-}
-
-/* Hotel Grid Items */
-.hotel-item {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 30%; /* Each item takes up 30% of the container width */
-    min-width: 280px; /* Ensures the items are not too small on smaller screens */
-    max-width: 320px; /* Optional: Limits the size of each item */
-    box-sizing: border-box;
-    text-align: center;
-    margin: 10px; /* Adds space between items */
-    border-radius: 8px; /* Optional: Rounded corners */
-    overflow: hidden; /* Ensures content doesn't spill out */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a soft shadow */
-    padding: 20px; /* Adds padding inside the item */
-}
-
-.hotel-item:hover {
-    transform: translateY(-10px); /* Creates a lift effect on hover */
-}
-
-.hotel-image {
+.things-container iframe {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.hotel-item h3 {
-    font-size: 1.8rem;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.hotel-item p {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.book-button {
-    padding: 10px 20px;
-    background-color: #ff66b3;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.book-button:hover {
-    background-color: #ff3399;
-}
-
-/* Bubble Button Styling */
-.bubble-button {
-    display: inline-block; /* Treat the link as a block-level element for proper styling */
-    background-color: #f1b17c; 
-    color: white; /* White text */
-    padding: 10px 20px; /* Add space inside the button */
-    border-radius: 30px; /* Fully rounded corners to create the bubble shape */
-    font-size: 16px; /* Font size */
-    font-weight: bold; /* Make the text bold */
-    text-decoration: none; /* Remove underline */
-    text-align: center; /* Center text */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for 3D effect */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
-    margin: 5px 15px; /* Add vertical spacing */
-}
-
-/* Bubble Button Hover Effect */
-.bubble-button:hover {
-    background-color: #f7d99d;
-    transform: translateY(-4px); 
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    height: 500px; /* or any size you prefer */
+    border: 0;
 }
 
 .navbar {
@@ -243,6 +165,27 @@ footer {
     flex-shrink: 0;
 }
 
+
+
+/* === Responsive Adjustments === */
+@media (max-width: 768px) {
+    .things-container {
+        padding: 60px 20px 40px;
+    }
+
+    .things-container h2 {
+        font-size: 1.6rem;
+    }
+
+    .things-container p {
+        font-size: 1rem;
+    }
+
+    .things-container iframe {
+        height: 360px;
+    }
+}
+
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
     #header {
@@ -316,46 +259,5 @@ footer {
 
     .navbar-menu li {
         margin: 10px 0;
-    }
-}
-
-@media (max-width: 768px) {
-    #details {
-        font-size: 0.8rem; /* Adjust the font size */
-        line-height: 1.4; /* Adjust line height for better readability */
-    }
-
-    #details h2 {
-        font-size: 1.5rem; /* Adjust the heading size for mobile */
-    }
-
-    #details p {
-        font-size: 0.8rem; /* Adjust paragraph text size */
-        margin-bottom: 15px; /* Adjust spacing */
-    }
-
-    .hotel-grid {
-        flex-direction: column; /* Stack items vertically on small screens */
-        justify-content: flex-start; /* Aligns items to the top on mobile */
-    }
-
-    .hotel-item {
-        padding: 10px; /* Reduce the padding inside each item */
-        font-size: 0.9rem; /* Make the text inside the item smaller */
-        max-width: 90%; /* Ensure it doesn’t take up full width */
-        margin: 0 auto; /* Center the items */
-    }
-
-    .hotel-image {
-        height: 150px; /* Reduce the height of the image */
-        object-fit: cover; /* Keep the aspect ratio of the image */
-    }
-
-    .hotel-item h3 {
-        font-size: 1.2rem; /* Reduce the heading size */
-    }
-
-    .hotel-item p {
-        font-size: 0.9rem; /* Make text smaller */
     }
 }

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500&display=swap" rel="stylesheet"> -->
+    <%- include('partials/header_faq', { customStyles: 'faq' }) %>
+    <link rel="stylesheet" href="/styles/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <button class="hamburger" aria-label="Toggle navigation">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+        <ul class="navbar-menu">
+            <li><a href="/" class="bubble-button">Home</a></li>
+            <li><a href="/about" class="bubble-button">About Us</a></li>
+            <li><a href="/details" class="bubble-button">Details</a></li>
+            <li><a href="/things-to-do" class="bubble-button">Things to Do</a></li>
+            <li><a href="/faq" class="bubble-button">FAQs</a></li>
+            <li><a href="/rsvp" class="bubble-button">RSVP</a></li>
+        </ul>
+    </nav>
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <button class="faq-question">When do I need to RSVP by?</button>
+                <div class="faq-answer">
+                    <p>Please RSVP no later than August 30th via the website. If there are issues in trying to RSVP, please reach out.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">What should I wear?</button>
+                <div class="faq-answer">
+                    <p>Dress code is semi-formal. Think garden party vibes — dressy but comfortable!</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Can I bring a guest?</button>
+                <div class="faq-answer">
+                    <p>Yes, all guests are either invited alongside someone or allowed to bring a plus one. If your invitation was sent to you and you only,
+                        feel free to invite someone. Please reach out if you have any questions regarding this!
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Where should I stay?</button>
+                <div class="faq-answer">
+                    <p>We have reserved a small number of room blocks at a few hotels you can find on the Details page of the website. However, please look at
+                        all your options and choose whatever works best for you! Please read on the details page for more information.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Is there parking at the venue?</button>
+                <div class="faq-answer">
+                    <p>Yes, there is some parking at the venue for about 20 cars. However, ubers and lyfts will be easy to come by in the area.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <%- include('partials/footer'); %>
+    </footer>
+
+    <script>
+        // // Toggle FAQ answers
+        // document.querySelectorAll(".faq-question").forEach(button => {
+        //     button.addEventListener("click", () => {
+        //         button.classList.toggle("active");
+        //         const answer = button.nextElementSibling;
+        //         answer.style.display = answer.style.display === "block" ? "none" : "block";
+        //     });
+        // });
+        document.querySelectorAll(".faq-question").forEach(button => {
+            button.addEventListener("click", () => {
+                button.classList.toggle("active");
+            });
+        });
+    </script>
+
+</body>
+</html>

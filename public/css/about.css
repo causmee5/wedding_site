@@ -1,7 +1,7 @@
 @font-face {
-    font-family: 'Lucidity Condensed';
-    src: url('/fonts/lucidity-condensed.woff2') format('woff2'),
-         url('/fonts/lucidity-condensed.woff') format('woff');
+    font-family: 'AA PENNY';
+    src: url('/fonts/AA PENNY.woff2') format('woff2'),
+         url('/fonts/AA PENNY.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -12,18 +12,17 @@
     --rsvp-bg: #e6f7ff;
 }
 
-/* Keep Lucidity Condensed for headings and nav */
 h1, h2, h3, h4, .navbar, .bubble-button {
-    font-family: 'Lucidity Condensed', sans-serif;
-    letter-spacing: 0.5px;
+    font-family: 'AA PENNY', sans-serif;
+    letter-spacing: 0.2px;
     }
-    
+
 body {
-    font-family: 'Prompt', sans-serif;
-    font-size: 1.05rem;
-    letter-spacing: 0.4px;
-    line-height: 1.6;
-    font-weight: 400;
+    font-family: 'AA PENNY', sans-serif;
+    font-size: 0.95rem;          /* Slightly smaller size reduces crowding */
+    letter-spacing: 0.2px;       /* Tightens spacing for a cleaner look */
+    line-height: 1.75;           /* Looser line spacing helps legibility */
+    font-weight: 300; 
     display: flex;
     flex-direction: column;
 }

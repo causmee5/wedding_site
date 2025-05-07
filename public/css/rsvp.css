@@ -1,7 +1,7 @@
 @font-face {
-    font-family: 'Lucidity Condensed';
-    src: url('/fonts/lucidity-condensed.woff2') format('woff2'),
-         url('/fonts/lucidity-condensed.woff') format('woff');
+    font-family: 'AA PENNY';
+    src: url('/fonts/AA PENNY.woff2') format('woff2'),
+         url('/fonts/AA PENNY.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -15,25 +15,27 @@
     --input-bg: #f9f9f9;
   }
 
-/* Keep Lucidity Condensed for headings and nav */
 h1, h2, h3, h4, .navbar, .bubble-button {
-    font-family: 'Lucidity Condensed', sans-serif;
-    letter-spacing: 0.5px;
+    font-family: 'AA PENNY', sans-serif;
+    letter-spacing: 0.2px;
     }
     
 body {
-    font-family: 'Prompt', sans-serif;
-    font-size: 1rem;
+    font-family: 'AA PENNY', sans-serif;
+    font-size: 0.95rem;          
+    letter-spacing: 0.2px;       
+    line-height: 1.75;           
+    font-weight: 300; 
     color: var(--text-color);
     background: linear-gradient(to bottom, rgba(229, 133, 90, 0.5), rgba(247, 217, 157, 0.7));
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    }
+}
 
 #rsvp-form-container h2,
 #rsvp-form-container label {
-    font-family: 'Lucidity Condensed', sans-serif;
+    font-family: 'AA PENNY', sans-serif;
 }
 
 #rsvp-form-container input[type="text"],
@@ -240,6 +242,26 @@ html, body {
 
 .hamburger.open .line:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.jotform-wrapper {
+    background-color: var(--form-bg);
+    border: 1px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  
+    width: 90%;
+    max-width: 1000px;  /* Wider on desktops */
+    margin: 120px auto 60px; /* center + push below navbar */
+}
+
+.jotform-wrapper iframe {
+width: 100%;
+min-height: 700px;
+border: none;
+border-radius: 8px;
+background-color: #fff;
 }
 
 footer {

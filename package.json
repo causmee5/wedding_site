@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "node app.js",   
-    "start": "node app.js", 
-    "build": "next build"      
+    "dev": "node app.js",
+    "start": "node app.js",
+    "build": "next build"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +14,8 @@
   "dependencies": {
     "body-parser": "^1.20.3",
     "ejs": "^3.1.10",
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "pg": "^8.15.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.7"

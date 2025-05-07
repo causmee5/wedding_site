@@ -23,6 +23,14 @@ app.get('/details', (req, res) => {
     res.render("details"); // Event details page
 });
 
+app.get('/things-to-do', (req, res) => {
+    res.render('things-to-do');
+  });
+  
+app.get("/faq", (req, res) => {
+    res.render("faq", { title: "Frequently Asked Questions" });
+});
+
 app.get("/rsvp", (req, res) => {
     res.render("rsvp", { title: "RSVP for Our Wedding" });
 });

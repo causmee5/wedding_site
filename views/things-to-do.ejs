@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <%- include('partials/header_things-to-do', { customStyles: 'things-to-do' }) %>
+    <link rel="stylesheet" href="/styles/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <button class="hamburger" aria-label="Toggle navigation">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+        <ul class="navbar-menu">
+            <li><a href="/" class="bubble-button">Home</a></li>
+            <li><a href="/about" class="bubble-button">About Us</a></li>
+            <li><a href="/details" class="bubble-button">Details</a></li>
+            <li><a href="/things-to-do" class="bubble-button">Things to Do</a></li>
+            <li><a href="/faq" class="bubble-button">FAQs</a></li>
+            <li><a href="/rsvp" class="bubble-button">RSVP</a></li>
+        </ul>
+    </nav>
+    <section class="things-to-do">
+        <div class="things-container">
+            <h2>Great Places to Eat</h2>
+            <p>
+            Atlanta is full of incredible food—from world-class Southern fare to cozy brunch spots and date-night restaurants. Whether you're looking for BBQ, vegan eats, or something unique, there's a spot for everyone.
+            </p>
+            <!-- Replace the src below with your actual Google Maps List link for restaurants -->
+            <iframe 
+                src="https://www.google.com/maps/d/u/0/embed?mid=11R5SdjXEsN9yLr9R33WhRCkBH4z-WW4&ehbc=2E312F" width="640" height="480">
+            </iframe>" 
+
+            <h2>Fun Things to Do</h2>
+            <p>
+            There’s no shortage of activities in Atlanta. Visit botanical gardens, explore museums, or stroll through lively neighborhoods like Inman Park and Little Five Points.
+            </p>
+            <!-- Replace the src below with your actual Google Maps List link for activities -->
+            <iframe 
+                src="https://www.google.com/maps/d/u/0/embed?mid=15phuF8ZI0XuU9xCNeGFWE0vuzA6pSWU&ehbc=2E312F" width="640" height="480">
+            </iframe>
+        </div>
+    </section>
+    <footer>
+        <%- include('partials/footer'); %>
+    </footer>
+</body>
+</html>
