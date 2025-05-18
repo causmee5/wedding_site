@@ -1,0 +1,200 @@
+@font-face {
+    font-family: 'AA PENNY';
+    src: url('/fonts/AA PENNY.woff2') format('woff2'),
+         url('/fonts/AA PENNY.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --primary-color: #e58154;
+    --accent-color: #f1b17c;
+    --hover-color: #f7d99d;
+    --form-bg: rgba(229, 133, 90, 0.2); /* More opaque peach */
+    --text-color: #333;
+    --input-bg: #f9f9f9;
+  }
+
+h1, h2, h3, h4, .navbar, .bubble-button {
+    font-family: 'AA PENNY', sans-serif;
+    letter-spacing: 0.2px;
+    }
+    
+html {
+    min-height: 100%;
+    }
+    
+body {
+    font-family: 'AA PENNY', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.2px;
+    line-height: 1.75;
+    font-weight: 300;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background: linear-gradient(to bottom, rgba(229, 133, 90, 0.5), rgba(247, 217, 157, 0.7));
+    min-height: 100vh
+    }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    /* height: 100%; */
+    }
+    
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* RSVP Section */
+.registry {
+    padding: 120px 20px 60px; /* 120px top pushes it below navbar */
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    /* background: linear-gradient(to bottom, rgba(229, 133, 90, 0.5), rgba(247, 217, 157, 0.7)); */
+}
+
+.zola-registry-embed {
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 60px 20px;
+    background: #f1b17c;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+.registry-container.wide {
+    width: 100%;
+    max-width: 1400px;  /* Try 1400px for more columns */
+    margin: 0 auto;
+    padding: 0 30px;
+    background: #f1b17c;
+  }
+
+
+/* Bubble Button Styling */
+.bubble-button {
+    display: inline-block; /* Treat the link as a block-level element for proper styling */
+    background-color: #f1b17c; 
+    color: white; /* White text */
+    padding: 10px 20px; /* Add space inside the button */
+    border-radius: 30px; /* Fully rounded corners to create the bubble shape */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Make the text bold */
+    text-decoration: none; /* Remove underline */
+    text-align: center; /* Center text */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for 3D effect */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    margin: 5px 15px; /* Add vertical spacing */
+}
+
+/* Bubble Button Hover Effect */
+.bubble-button:hover {
+    background-color: #f7d99d;
+    transform: translateY(-4px); 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+.navbar {
+    position: fixed; /* Keeps it fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    background-color: #e58154; /* Background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    z-index: 1000; /* Ensure it’s above other elements */
+    padding: 20px 30px; /* Space above and below the navbar content */
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50px; /* Adjust as needed */
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the navbar items */
+    margin: 0;
+    padding: 0;
+    flex-grow: 1; /* Allow the menu to grow and push items to the left */
+}
+
+.navbar-menu li {
+    margin: 0 15px; /* Space between each menu item */
+    display: inline-block
+}
+
+.navbar-menu a {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Text color */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Make the text bold */
+    padding: 5px 10px; /* Add padding for clickable area */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
+    border-radius: 5px; /* Rounded corners for hover effect */
+}
+
+.navbar-menu a:hover {
+    background-color: #f1b17c; /* Change background on hover */
+    /* color: rgb(241, 144, 18); Change text color on hover */
+}
+
+/* Default: Hide hamburger and show menu */
+.hamburger {
+    display: none;
+}
+
+.hamburger.open .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open .line:nth-child(2) {
+    opacity: 0; /* Hide the middle line */
+}
+
+.hamburger.open .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+footer {
+    font-size: 0.5rem; /* Reduce font size */
+    padding: 2px 0; /* Adjust padding for the footer */
+    text-align: center; /* Center the text */
+    background-color: #e58154; 
+    color: #fff; /* Set the text color */
+    margin-top: auto;
+    flex-shrink: 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .navbar-menu {
+      display: none;
+      flex-direction: column;
+      background-color: var(--primary-color);
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      padding: 10px 0;
+    }
+  
+    .navbar-menu.active {
+      display: flex;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  }

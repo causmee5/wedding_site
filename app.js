@@ -31,6 +31,10 @@ app.get("/faq", (req, res) => {
     res.render("faq", { title: "Frequently Asked Questions" });
 });
 
+app.get("/registry", (req, res) => {
+    res.render("registry", { title: "Registry" });
+});
+
 app.get("/rsvp", (req, res) => {
     res.render("rsvp", { title: "RSVP for Our Wedding" });
 });

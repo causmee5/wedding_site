@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500&display=swap" rel="stylesheet"> -->
+    <%- include('partials/header_registry', { customStyles: 'registry' }) %>
+    <link rel="stylesheet" href="/styles/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <button class="hamburger" aria-label="Toggle navigation">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+        <ul class="navbar-menu">
+            <li><a href="/" class="bubble-button">Home</a></li>
+            <li><a href="/about" class="bubble-button">About Us</a></li>
+            <li><a href="/details" class="bubble-button">Details</a></li>
+            <li><a href="/things-to-do" class="bubble-button">Things to Do</a></li>
+            <li><a href="/faq" class="bubble-button">FAQs</a></li>
+            <li><a href="/registry" class="bubble-button">Registry</a></li>
+            <li><a href="/rsvp" class="bubble-button">RSVP</a></li>
+        </ul>
+    </nav> 
+
+<!-- Main content wrapper -->
+<main class="main-content">
+    <!-- Registry Section -->
+    <section class="registry">
+        <div class="registry-container wide">
+            <a
+                class="zola-registry-embed"
+                href="https://www.zola.com/registry/carlandashley2025"
+                data-registry-key="carlandashley2025"
+            >
+                Our Zola Wedding Registry
+            </a>
+        </div>
+    </section>
+</main>
+
+<!-- Zola Widget Loader Script -->
+<script>
+    !function(e,t,n){
+        var s,a=e.getElementsByTagName(t)[0];
+        e.getElementById(n) || (
+            s=e.createElement(t),
+            s.id=n,
+            s.async=!0,
+            s.src="https://widget.zola.com/js/widget.js",
+            a.parentNode.insertBefore(s,a)
+        )
+    }(document,"script","zola-wjs");
+</script>
+
+<footer>
+    <%- include('partials/footer'); %>
+</footer>
+</body>
+
+</html>
