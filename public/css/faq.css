@@ -1,7 +1,15 @@
 @font-face {
     font-family: 'AA PENNY';
     src: url('/fonts/AA PENNY.woff2') format('woff2'),
-            url('/fonts/AA PENNY.woff') format('woff');
+         url('/fonts/AA PENNY.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura Display';
+    src: url('/fonts/FuturaDisplay.woff2') format('woff2'),
+         url('/fonts/FuturaDisplay.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -10,13 +18,25 @@
     --about-bg: #ffe6e6;
     --details-bg: #f9f9f9;
     --rsvp-bg: #e6f7ff;
-    --faq-bg: #fffaf5;
-    }
-
+}
+  
 h1, h2, h3, h4, .navbar, .bubble-button {
     font-family: 'AA PENNY', sans-serif;
     letter-spacing: 0.2px;
     }
+
+h3 {
+    font-size: 1.8rem; /* Between h2 and body */
+}
+
+p {
+    font-family: 'Futura Display', 'AA PENNY', sans-serif;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    font-size: 1.1rem;
+    color: #555;
+}
 
 body {
     font-family: 'AA PENNY', sans-serif;

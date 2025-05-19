@@ -6,6 +6,14 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Futura Display';
+    src: url('/fonts/FuturaDisplay.woff2') format('woff2'),
+         url('/fonts/FuturaDisplay.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     --about-bg: #ffe6e6;
     --details-bg: #f9f9f9;
@@ -17,6 +25,20 @@ h1, h2, h3, h4, .navbar, .bubble-button {
     letter-spacing: 0.2px;
     }
 
+h3 {
+    font-size: 1.8rem; /* Between h2 and body */
+}
+
+.details p,
+.hotel-item p,
+.hotel-block p {
+    font-family: 'Futura Display', 'AA PENNY', sans-serif;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    font-size: 1.1rem;
+    color: #555;
+}
 body {
     font-family: 'AA PENNY', sans-serif;
     font-size: 0.95rem;          /* Slightly smaller size reduces crowding */
@@ -95,12 +117,28 @@ iframe {
 .hotel-item {
     display: flex;
     flex-direction: column;
-    flex: 1 1 30%; /* Each item takes up 30% of the container width */
+    flex: 1 1 45%; /* About half the row, with room for gap/margin */
+    max-width: 45%;
     min-width: 280px; /* Ensures the items are not too small on smaller screens */
-    max-width: 320px; /* Optional: Limits the size of each item */
     box-sizing: border-box;
     text-align: center;
     margin: 10px; /* Adds space between items */
+    border-radius: 8px; /* Optional: Rounded corners */
+    overflow: hidden; /* Ensures content doesn't spill out */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a soft shadow */
+    padding: 20px; /* Adds padding inside the item */
+}
+
+/* Hotel Grid Items */
+.hotel-block {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 45%; /* About half the row, with room for gap/margin */
+    max-width: 45%;
+    min-width: 280px; /* Ensures the items are not too small on smaller screens */
+    box-sizing: border-box;
+    text-align: center;
+    margin: 40px auto; /* Adds space between items */
     border-radius: 8px; /* Optional: Rounded corners */
     overflow: hidden; /* Ensures content doesn't spill out */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a soft shadow */

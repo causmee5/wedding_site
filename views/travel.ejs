@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500&display=swap" rel="stylesheet"> -->
+    <%- include('partials/header_travel', { customStyles: 'travel' }) %>
+    <link rel="stylesheet" href="/styles/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <button class="hamburger" aria-label="Toggle navigation">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+        <ul class="navbar-menu">
+            <li><a href="/" class="bubble-button">Home</a></li>
+            <li><a href="/about" class="bubble-button">About Us</a></li>
+            <li><a href="/eventdetails" class="bubble-button">Event Details</a></li>
+            <li><a href="/travel" class="bubble-button">Travel</a></li>
+            <li><a href="/things-to-do" class="bubble-button">Things to Do</a></li>
+            <li><a href="/faq" class="bubble-button">FAQs</a></li>
+            <li><a href="/registry" class="bubble-button">Registry</a></li>
+            <li><a href="/rsvp" class="bubble-button">RSVP</a></li>
+        </ul>
+    </nav>
+    <section class="details">
+        <div class="container">
+
+            <h2>Hotel Information</h2>
+            <p>
+                We have selected two hotels with fixed-rate blocks as options for your stay in Atlanta. 
+                If you're considering these options, please book sooner than later so we can extend the blocks if needed. 
+                However, if you are considering other options, there are a plethora of AirBnbs and other hotels available to you. 
+                PLEASE keep in mind, traffic can be chaotic and unpredictable in the city. 
+                If you stay further from the venue, keep in mind how early you may have to depart to make it to the reception on time. 
+                Feel free to reach out to the couple for any questions or tips.
+            </p>
+
+
+            <p>Firstly, here are the 2 hotel blocks we have reserved:</p>
+
+            <h3>Wylie Hotel</h3>
+            <p>551 Ponce De Leon Ave NE, Atlanta, GA 30308</p>
+            <p>Available from October 10th - October 12th at a rate of $219. 
+                This hotel is in the middle of one of the most fun parts of the city, accessible to many restaurants, 
+                shops and bars that we love to visit via the Beltline--a walking path that you can use to get anywhere in the city!
+                Please use the link below to book this rate.
+            </p>
+            <div class="hotel-block">
+                <img src="/images/wylie.png" alt="Wylie" class="hotel-image">
+                <p>Located 2 miles from the venue</p>
+                <a href="https://www.hilton.com/en/book/reservation/deeplink/?ctyhocn=ATLYLUP&groupCode=WRBNA&arrivaldate=2025-10-10&departuredate=2025-10-12&cid=OM,WW,HILTONLINK,EN,DirectLink&fromId=HILTONLINKDIRECT" target="_blank" class="book-button">Book Now</a>
+            </div>
+
+
+            <h3>Holiday Inn Express & Suites Atlanta-Emory University Area</h3>
+            <p>2183 N Decatur Rd, Decatur, GA 30033</p>
+            <p>Available from October 10th - October 12th at a rate of $174. 
+                This hotel is near Emory University, a beautiful area on its own, and Downtown Decatur, another great area with plenty to do. 
+                This block is an example of a hotel a little further out but still reasonable distance to take ride share to the venue yet still has plenty to do nearby!
+                Please use the link below to book this rate.
+            </p>
+            <div class="hotel-block">
+                <img src="/images/holidayinn.jpg" alt="Holiday Inn" class="hotel-image">
+                <p>Located 5 miles from the venue</p>
+                <a href="https://www.hiexpress.com/redirect?path=rates&brandCode=EX&localeCode=en&regionCode=1&hotelCode=ATLDE&checkInDate=10&checkInMonthYear=092025&checkOutDate=12&checkOutMonthYear=092025&_PMID=99801505&GPC=AUS&cn=no&viewfullsite=true" target="_blank" class="book-button">Book Now</a>
+            </div>
+
+            <h3>Others</h3>
+            <p>
+                We’ve curated a list of other nearby hotels and fun options where you can stay during the wedding weekend! Feel free to explore outside of these options for what works within your budget,
+                whethers thats any of these of not. We recommend staying within 10 miles of the venue—the further out you go, the more unpredictable traffic can be.
+                As always, let us know if you have any questions for your accomadations.
+            </p>
+
+            <div class="hotel-grid">
+                <div class="hotel-item">
+                    <img src="/images/clermont.jpg" alt="Clermont" class="hotel-image">
+                    <h3>Clermont Hotel</h3>
+                    <p>Located 2.2 miles from the venue</p>
+                    <a href="https://www.hotelclermont.com/" target="_blank" class="book-button">Book Now</a>
+                </div>
+    
+                <div class="hotel-item">
+                    <img src="/images/magnolia.jpg" alt="Magnolia" class="hotel-image">
+                    <h3>Sugar Magnolia Bed and Breakfast</h3>
+                    <p>Located 0.3 miles from the venue</p>
+                    <a href="https://sugarmagnoliabb.com/" target="_blank" class="book-button">Book Now</a>
+                </div>
+    
+                <div class="hotel-item">
+                    <img src="/images/voco.avif" alt="Voco" class="hotel-image">
+                    <h3>voco the Darwin</h3>
+                    <p>Located 2.1 miles from the venue</p>
+                    <a href="https://www.ihg.com/voco/hotels/us/en/reservation" target="_blank" class="book-button">Book Now</a>
+                </div>
+    
+                <div class="hotel-item">
+                    <img src="/images/indigo.avif" alt="Hotel Indigo" class="hotel-image">
+                    <h3>Hotel Indigo Atlanta Midtown</h3>
+                    <p>Located 2.8 miles from the venue</p>
+                    <a href="https://www.ihg.com/hotelindigo/hotels/us/en/atlanta/atlfx/hoteldetail" target="_blank" class="book-button">Book Now</a>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <%- include('partials/footer'); %>
+    </footer>
+
+</body>
+</html>

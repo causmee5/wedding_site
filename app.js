@@ -19,8 +19,12 @@ app.get('/about', (req, res) => {
     res.render("about", { title: "About Us" });
 });
 
-app.get('/details', (req, res) => {
-    res.render("details"); // Event details page
+app.get('/eventdetails', (req, res) => {
+    res.render("eventdetails"); // Event details page
+});
+
+app.get('/travel', (req, res) => {
+    res.render("travel", { title: "Travel" });
 });
 
 app.get('/things-to-do', (req, res) => {
