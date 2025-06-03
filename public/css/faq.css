@@ -109,6 +109,13 @@ html, body {
     margin-bottom: 20px;
 }
 
+/* Expanded (active) */
+.faq-answer.expanded {
+    max-height: none; /* allow full content */
+    padding: 15px 20px;
+    margin-bottom: 20px;
+}
+
 /* Question Style */
 .faq-question {
     background: #fef5f0;

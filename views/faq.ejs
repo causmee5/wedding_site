@@ -42,6 +42,10 @@
                         Cocktail attire: men should wear a suit with a tie and women should wear a midi-length dress or dressy separates. 
                         Inspiration pictures are below:
                     </p>
+                    <blockquote class="imgur-embed-pub" lang="en" data-id="a/yamjtw4"  >
+                        <a href="//imgur.com/a/yamjtw4">Dress Code Guidance</a>
+                    </blockquote>
+                    <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
                 </div>
             </div>
 
@@ -81,17 +85,22 @@
     </footer>
 
     <script>
-        // // Toggle FAQ answers
-        // document.querySelectorAll(".faq-question").forEach(button => {
-        //     button.addEventListener("click", () => {
-        //         button.classList.toggle("active");
-        //         const answer = button.nextElementSibling;
-        //         answer.style.display = answer.style.display === "block" ? "none" : "block";
-        //     });
-        // });
         document.querySelectorAll(".faq-question").forEach(button => {
             button.addEventListener("click", () => {
                 button.classList.toggle("active");
+                const answer = button.nextElementSibling;
+    
+                if (button.classList.contains("active")) {
+                    // Expanding: set dynamic height
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                    answer.style.padding = "15px 20px";
+                    answer.style.marginBottom = "20px";
+                } else {
+                    // Collapsing: reset styles
+                    answer.style.maxHeight = "0";
+                    answer.style.padding = "0 20px";
+                    answer.style.marginBottom = "0";
+                }
             });
         });
     </script>
