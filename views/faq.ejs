@@ -89,19 +89,19 @@
             button.addEventListener("click", () => {
                 button.classList.toggle("active");
                 const answer = button.nextElementSibling;
-    
+
                 if (button.classList.contains("active")) {
-                    // Expanding: set dynamic height
                     answer.style.maxHeight = answer.scrollHeight + "px";
                     answer.style.padding = "15px 20px";
                     answer.style.marginBottom = "20px";
+                    button.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 } else {
-                    // Collapsing: reset styles
                     answer.style.maxHeight = "0";
                     answer.style.padding = "0 20px";
                     answer.style.marginBottom = "0";
                 }
             });
+
         });
     </script>
 
