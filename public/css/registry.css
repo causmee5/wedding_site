@@ -52,11 +52,13 @@ html, body {
 
 /* RSVP Section */
 .registry {
-    padding: 120px 20px 60px; /* 120px top pushes it below navbar */
+    padding: 120px 20px 60px;
     display: flex;
-    flex-grow: 1;
-    justify-content: center;
-    /* background: linear-gradient(to bottom, rgba(229, 133, 90, 0.5), rgba(247, 217, 157, 0.7)); */
+    flex-direction: column;   /* Stack h2, p, and div vertically */
+    align-items: center;      /* Center them horizontally */
+    text-align: center;       /* Center text inside h2 and p */
+    max-width: 900px;         /* Optional: limit width for better readability */
+    margin: 0 auto;
 }
 
 .zola-registry-embed {
@@ -78,6 +80,15 @@ html, body {
     background: #f1b17c;
   }
 
+.registry h2 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.registry p {
+    margin-bottom: 30px;
+    max-width: 700px;
+}
 
 /* Bubble Button Styling */
 .bubble-button {
