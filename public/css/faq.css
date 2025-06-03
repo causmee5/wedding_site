@@ -139,6 +139,7 @@ html, body {
     transition: background-color 0.3s ease;
     width: 100%;
     font-family: 'AA PENNY', sans-serif;
+    color: inherit;
     }
 
 /* Fix hover and active colors */
